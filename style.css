@@ -43,7 +43,7 @@ form {
 }
 
 form input {
-    height: 20px;
+    height: 25px;
     border: 2px solid #00ABBD;
     border-radius: 5px;
     background: none;
@@ -82,6 +82,7 @@ form .box {
     border-radius: 5px;
     background-color: #A1C7E0;
     box-shadow: 2px 2px 3px black;
+    text-align: center;
 }
 
 form .box header {
@@ -95,7 +96,10 @@ form .box h1 {
     font-family: 'Courier New', Courier, monospace;
     text-align: center;
 }
-
+form .box h2 {
+    text-align: center;
+    font-size: 14px;
+}
 form .box main {
     display: flex;
     flex-direction: column;
@@ -105,7 +109,23 @@ form .box main {
 form .box main p {
     font-size: 20px;
 }
+form .addres-item{
+    text-align: center;
+}
 
+form .addres-item label {
+    font-size: 22px;
+}
+
+form .box a{
+    
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+    text-decoration: none;
+    padding: 3px;
+    border: 0.5px solid black;
+    border-radius: 5px;
+}
 #map {
     width: 70vw;
     height: 80vh;
