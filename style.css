@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #fdc58d;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #A1C7E0;
+    height: 10vh;
+}
+
+header h1 {
+    color: #2e2e2e;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+header h2 {
+    font-size: 16px;
+    position: absolute;
+    right: 5px;
+    color: #2e2e2e;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+main {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-around;
+}
+
+form {
+    width: 20vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+
+form input {
+    height: 20px;
+    border: 2px solid #00ABBD;
+    border-radius: 5px;
+    background: none;
+    box-shadow: 2px 2px 3px black;
+
+}
+
+form h2 {
+    font-weight: 600;
+    margin-top: 15px;
+    color: rgb(48, 48, 48);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+form .button {
+    height: 25px;
+    margin-top: 15px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+    box-shadow: 1px 1px 5px black;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+
+form .button:hover {
+    opacity: 0.8;
+    ;
+}
+
+form .box {
+    margin-top: 5vh;
+    width: 20vw;
+    height: 45vh;
+    border-radius: 5px;
+    background-color: #A1C7E0;
+    box-shadow: 2px 2px 3px black;
+}
+
+form .box header {
+    height: auto;
+    background-color: #8a8a8a;
+}
+
+form .box h1 {
+    color: #4FFFDC;
+    font-size: 22px;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+form .box main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+form .box main p {
+    font-size: 20px;
+}
+
+#map {
+    width: 70vw;
+    height: 80vh;
+    box-shadow: 2px 2px 3px black;
+    border: 2px solid #00ABBD;
+    border-radius: 5px;
+
+}
+
+@media (max-width: 800px) {
+    header h2 {
+        display: none;
+    }
+    main {
+        height: 1000px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    form {
+        width: 80%;
+        font-size: 18px;
+    }
+    form .box {
+        width: 50vw;
+
+    }
+    #map {
+        margin-top: 50px;
+        width: 70vw;
+        height: 80vh;
+        box-shadow: 2px 2px 3px black;
+        border: 2px solid #00ABBD;
+        border-radius: 5px;
+    
+    }
+}

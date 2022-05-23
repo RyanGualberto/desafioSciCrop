@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Cadastro de Locais</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Cadastro de Locais</h1>
+        <h2>&copy; Desenvolvido por Ryan Gualberto</h2>
+    </header>
+    <main>
+        <form onsubmit="cadastraEndereco()" id="addres-form">
+            <h2>Nome do local:</h2>
+            <input type="text" id="nome">
+            <h2>Latitude:</h2>
+            <input type="number" id="latitude">
+            <h2>Longitude:</h2>
+            <input type="number" id="longitude">
+            <input type="submit" value="Cadastrar" class="button">
+            <div class="box">
+                <header>
+                    <h1>Endereços Salvos</h1>
+                </header>
+                <hr>
+                <main id="addres-List">
+
+                </main>
+            </div>
+        </form>
+        <div id="map"></div>
+    </main>
+
+    <script>
+        //recebendo nome, latitude e longitude
+        const form = document.getElementById('addres-form');
+        const addresList = document.getElementById('addres-List');
+
+
+        form.onsubmit = function (e) {
+            e.preventDefault();
+            const nomeLocal = document.getElementById("nome").value;
+            const lat = document.getElementById("latitude").value;
+            const long = document.getElementById("longitude").value;
+            let description = nomeLocal.value;
+            addAdress(description);
+
+            form.reset();
+        };
+
+        function addAdress(description) {
+            const addresConta = document.createElement('div');
+            const addresLabel = document.createElement('label');
+            const addresDescription = document.createTextNode(description);
+            addresLabel.setAttribute('for', description);
+            addresLabel.appendChild(addresDescription);
+            addresConta.classList.add('addres-item');
+            addresConta.appendChild(addresLabel);
+            addresList.appendChild(addresConta);
+        }
+
+        //mapa
+        var mapOptions = {
+            //coordenadas, zoom 
+            center: [-24.0165677, -46.4814347],
+            zoom: 18
+        }
+
+        var map = new L.map('map', mapOptions);
+        var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+        map.addLayer(layer);
+
+        //marcador
+        var marker = new L.Marker([-24.0165677, -46.4814347]);
+        marker.addTo(map);
+    </script>
+</body>
+
+</html>
